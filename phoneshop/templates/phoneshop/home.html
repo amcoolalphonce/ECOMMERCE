@@ -1,0 +1,58 @@
+{% extends "phoneshop/base.html" %}{% block content %}
+
+<style>
+	.div {
+	columns: 150px 3;
+  }
+   .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<br />
+<!--CREATE THREE HORIZONTAL CARDS HERE FOR ORDER, SPAREPARTS AND BUY PHONES-->
+<div class="column">
+	<div class="card">
+		<img
+			src="https://images.unsplash.com/photo-1576613109753-27804de2cba8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvbmUlMjByZXBhaXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+			alt="phone repairs pic"
+			style="width: 100%"
+		/>
+		<div class="container">
+					<a href="{% url 'order' %}">ORDER REPAIR?</a>
+		</div>
+	</div>
+</div>
+<br />
+
+<div class="card">
+	<img
+		src="https://images.unsplash.com/photo-1592813630413-1124aa567638?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=585&q=80"
+		alt="phone repairs pic"
+		style="width: 100%"
+	/>
+	<div class="container">
+				<a href="{% url 'order' %}">REQUEST SPAREPARTS</a>
+	</div>
+</div>
+</div>
+
+
+
+
+<br>
+<div class="column" >
+	<ul id="myMenu">
+		<li><a href="{% url 'order' %}">1. Order Phone repair</a></li>
+		<li><a href="{% url 'spareparts' %}">2. Order phone spare parts</a></li>
+		<li><a href="#">3. Order phone</a></li>
+		<li><a href="#">4. Track Service</a></li>
+		<li><a href="#">5. Make payments</a></li>
+		<li><a href="#">6. View our after sale services </a></li>
+	</ul>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "phoneshop/base.html" %}{% block content %}
+<center>
+    <br>
+    ADD AN ORDER 
+    <br>
+    {% if submitted %}
+        Your Order was submitted successfully!!!
+    {% else %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit" class="btn btn-danger">
+        </form>
+    {% endif %}
+</center>
+{% endblock content %}

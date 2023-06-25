@@ -1,0 +1,48 @@
+{% extends "phoneshop/base.html" %} {% block content %}
+<script src="https://js.stripe.com/v3/"></script>
+<form action="/payment" method="POST" id="payment-form">
+	<div class="form-row">
+		<label for="card-element"> Credit card or Debit Card </label>
+		<div id="card-element"></div>
+
+		<div id="card-errors" role="alert"></div>
+	</div>
+	<button type="button" id="checkout-button">Submit Payment</button>
+</form>
+<script>
+	fetch("/config/")
+		.then((result) => {
+			return result.json();
+		})
+		.then((data) => {
+			// Initialize Stripe.js
+			const stripe = Stripe(data.publicKey);
+			console.log("Sanity check!", data.publicKey);
+			var checkoutButton = document.getElementById("checkout-button");
+
+			fetch("/create-checkout-session/", {
+				method: "POST",
+			})
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (session) {
+					return stripe.redirectToCheckout({ sessionId: session.id });
+				})
+				.then(function (result) {
+					// If `redirectToCheckout` fails due to a browser or network
+					// error, you should display the localized error message to your
+					// customer using `error.message`.
+					if (result.error) {
+						alert(result.error.message);
+					}
+				})
+				.catch(function (error) {
+					console.error("Error:", error);
+				});
+		});
+</script>
+<!--fetch
+result-
+JSON --DATA->publicKey -->
+{% endblock content %}

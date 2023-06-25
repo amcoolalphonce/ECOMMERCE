@@ -1,0 +1,15 @@
+{% autoescape off %}
+
+Hello {{user}}
+Your Sparepart Request of :
+
+Phone Model:  {{phone_model}}
+Sparepart:    {{spare}}
+
+Has been received and is being worked on.
+
+Regards,
+Phone Repair Shop
+
+
+{% endautoescape %}

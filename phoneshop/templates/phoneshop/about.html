@@ -1,0 +1,134 @@
+{% extends "phoneshop/base.html" %} {% block content %}
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    html {
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
+    .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+    }
+
+    .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .container::after,
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .title {
+        color: grey;
+    }
+
+    .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .button:hover {
+        background-color: #555;
+    }
+
+    @media screen and (max-width: 650px) {
+        .column {
+            width: 100%;
+            display: block;
+        }
+    }
+</style>
+<br>
+
+<div class="about-section">
+    <h1>About Us Page</h1>
+    <p>
+    <p>We are a leading shop for mobile Phones. We specialize in :</p>
+    <li>Phone repairs</li>
+    <li>Phone covers</li>
+    <li>New phones</li>
+    <li>Fast charging cables</li>
+    </p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+    <div class="column">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1576613109753-27804de2cba8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvbmUlMjByZXBhaXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="Brian" style="width:100%">
+            <div class="container">
+                <h2>Brian Otachi</h2>
+                <p class="title">CEO & Founder</p>
+                <p>An upcoming phones softawre and hardware </p>
+                <p>brianotachi@gmail.com</p>
+                <p><button class="button"><a href="brianotachi@gmail.com.com">Contact</a></button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1609087039984-8b13e8a3e658?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHBob25lcyUyMGJlaW5nJTIwcmVwYWlyZWR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="Magoma" style="width:100%">
+            <div class="container">
+                <h2>Caleb Magoma</h2>
+                <p class="title">Art Director</p>
+                <p>Analyses the best softawre for different phones and in charge of specifications</p>
+                <p>calebmagoma@students.uonbi.ac.ke</p>
+                <p><button class="button"><a href="mailto:calebmagoma@students.uoni.ac.ke"
+                            class="email">Contact</a></button></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1566728595333-75a1d7cae961?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGhvbmUlMjByZXBhaXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="amcoolalphonce" style="width:100%">
+            <div class="container">
+                <h2>Alphonce Omondi</h2>
+                <p class="title">Software Designer</p>
+                <p>Hands on practical solutions to meet your desired phone need</p>
+                <p>amcoolalphonce@gmail.com</p>
+                <p><button class="button"><a href="mailto:amcoolalphonce@gmail.com">Contact</a></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
