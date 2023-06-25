@@ -1,0 +1,47 @@
+{% extends "phoneshop/base.html" %} {% block content %}
+{% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-{{message.tags}}" role="alert">
+		{{message}}
+	  </div>
+	{% endfor %}
+{% endif %}
+<h3>REQUEST PHONE REPAIR</h3>
+<form method="post" action="">
+	<!--i require the form action be to go to the admin page for the admin to view these orders and work on them
+    this should also display to the user their previous requests for repair-->
+	{% csrf_token %} 
+	First Name : <br />
+	<input name="first_name" required />
+	<br /><br />
+	Last Name : <br />
+	<input name="last_name" required />
+	<br /><br />
+	Email : <br>
+	<input name="email" required/>
+	<br><br>
+	Telephone Number : <br />
+	<input name="telephone" required />
+	<br /><br />
+	Date Brought : <br />
+	<input name="date_brought" type="date" required />
+	<br /><br />
+	Phone Model : <br />
+	<input name="phone_model" required />
+	<br /><br />
+	Repair Description
+	<br />
+	<!--kind of good now 😂-->
+	<textarea
+		name="textmsg"
+		class="form-control"
+		placeholder="Repair description *"
+		style="width: 80%; height: 150px"
+		required
+	></textarea>
+	<br />
+	<input type="submit" value="Submit" />
+</form>
+<br />
+
+{% endblock content %}

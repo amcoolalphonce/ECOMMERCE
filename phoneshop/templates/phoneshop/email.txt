@@ -1,0 +1,21 @@
+{% autoescape off  %}
+Hello {{user}},
+Your Order has been received and is  being worked on.
+Here is a copy of your Order
+
+ Name : {{first_name}}  {{last_name}}
+ Email : {{email}}
+
+ Phone Model: {{phone_model}}
+
+ Description:
+{{description}}
+
+ Date Brought: 
+ {{date_brought}}
+
+ Telephone: {{telephone}}
+
+ Regards, 
+ Phone Repair Shop.
+{% endautoescape %}

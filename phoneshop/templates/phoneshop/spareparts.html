@@ -1,0 +1,28 @@
+{% extends "phoneshop/base.html" %} {% block content %}
+{% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-{{message.tags}}" role="alert">
+		{{message}}
+	  </div>
+	{% endfor %}
+{% endif %}
+<h2>REQUEST SPARE PARTS</h2>
+<form method="post">
+	{% csrf_token %} First Name <br />
+	<input name="first_name" required />
+	<br /><br />
+	Email <br>
+	<input name="email" required />
+	<br/><br>
+	Telephone Number <br />
+	<input name="telephone" required />
+	<br /><br />
+	Phone Model <br />
+	<input name="phone_model" required />
+	<br />
+	Spare Part <br />
+	<input name="spare" required />
+	<br /><br />
+	<input type="submit" value="Submit" />
+</form>
+{% endblock content %}

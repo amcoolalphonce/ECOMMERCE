@@ -1,0 +1,14 @@
+{%  extends "phoneshop/base.html " %}
+{% load crispy_forms_tags %}
+{% block content%}
+    <form action="" method="post">
+        <h4>Enter amount</h4>
+        <hr>
+        {% csrf_token %}
+        {{ payment_form | crispy }}
+        
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+{% endblock content %}
